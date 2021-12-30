@@ -63,7 +63,7 @@ item_table = {'Bow': (True, False, None, 0x0B, 'You have\nchosen the\narcher cla
               'Green Pendant': (True, False, 'Crystal', [0x04, 0x38, 0x62, 0x00, 0x69, 0x01], None, None, None, None, None, None, None),
               'Red Pendant': (True, False, 'Crystal', [0x02, 0x34, 0x60, 0x00, 0x69, 0x02], None, None, None, None, None, None, None),
               'Blue Pendant': (True, False, 'Crystal', [0x01, 0x32, 0x60, 0x00, 0x69, 0x03], None, None, None, None, None, None, None),
-              'Triforce': (True, False, None, 0x6A, '\n   YOU WIN!', 'and the triforce', 'victorious kid', 'victory for sale', 'fungus for the win', 'greedy boy wins game again', 'the Triforce'),
+              'Triforce': (True, False, None, 0x6A, '\n   TRINITY!', 'and the triforce', 'victorious kid', 'victory for sale', 'fungus for the win', 'greedy boy wins game again', 'the Triforce'),
               'Power Star': (True, False, None, 0x6B, 'a small victory', 'and the power star', 'star-struck kid', 'star for sale', 'see stars with shroom', 'mario powers up again', 'a Power Star'),
               'Triforce Piece': (True, False, None, 0x6C, 'a small victory', 'and the thirdforce', 'triangular kid', 'triangle for sale', 'fungus for triangle', 'wise boy has triangle again', 'a Triforce Piece'),
               'Crystal 1': (True, False, 'Crystal', [0x02, 0x34, 0x64, 0x40, 0x7F, 0x06], None, None, None, None, None, None, None),
