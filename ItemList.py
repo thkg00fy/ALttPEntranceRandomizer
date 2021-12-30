@@ -33,7 +33,7 @@ Difficulty = namedtuple('Difficulty',
                         ['baseitems', 'bottles', 'bottle_count', 'same_bottle', 'progressiveshield',
                          'basicshield', 'progressivearmor', 'basicarmor', 'swordless',
                          'progressivesword', 'basicsword', 'basicbow', 'timedohko', 'timedother',
-                         'triforcehunt', 'triforce_pieces_required', 'retro',
+                         'triforcehunt', 'triforce_pieces_required', 'trinityhunt', 'trinity_pieces_required', 'retro',
                          'extras', 'progressive_sword_limit', 'progressive_shield_limit',
                          'progressive_armor_limit', 'progressive_bottle_limit', 
                          'progressive_bow_limit', 'heart_piece_limit', 'boss_heart_container_limit'])
@@ -58,6 +58,8 @@ difficulties = {
         timedother = ['Green Clock'] * 20 + ['Blue Clock'] * 10 + ['Red Clock'] * 10,
         triforcehunt = ['Triforce Piece'] * 30,
         triforce_pieces_required = 20,
+        trinityhunt = ['Triforce Piece'] * 12,
+        trinity_pieces_required = 10,
         retro = ['Small Key (Universal)'] * 17 + ['Rupees (20)'] * 10,
         extras = [normalfirst15extra, normalsecond15extra, normalthird10extra, normalfourth5extra, normalfinal25extra],
         progressive_sword_limit = 4,
@@ -85,6 +87,8 @@ difficulties = {
         timedother = ['Green Clock'] * 20 + ['Blue Clock'] * 10 + ['Red Clock'] * 10,
         triforcehunt = ['Triforce Piece'] * 30,
         triforce_pieces_required = 20,
+        trinityhunt = ['Triforce Piece'] * 12,
+        trinity_pieces_required = 10,
         retro = ['Small Key (Universal)'] * 12 + ['Rupees (5)'] * 15,
         extras = [normalfirst15extra, normalsecond15extra, normalthird10extra, normalfourth5extra, normalfinal25extra],
         progressive_sword_limit = 3,
@@ -112,6 +116,8 @@ difficulties = {
         timedother = ['Green Clock'] * 20 + ['Blue Clock'] * 10 + ['Red Clock'] * 10,
         triforcehunt = ['Triforce Piece'] * 30,
         triforce_pieces_required = 20,
+        trinityhunt = ['Triforce Piece'] * 12,
+        trinity_pieces_required = 10,
         retro = ['Small Key (Universal)'] * 12 + ['Rupees (5)'] * 15,
         extras = [normalfirst15extra, normalsecond15extra, normalthird10extra, normalfourth5extra, normalfinal25extra],
         progressive_sword_limit = 2,
@@ -125,7 +131,7 @@ difficulties = {
 }
 
 def generate_itempool(world, player):
-    if (world.difficulty not in ['normal', 'hard', 'expert'] or world.goal not in ['ganon', 'pedestal', 'dungeons', 'triforcehunt', 'crystals']
+    if (world.difficulty not in ['normal', 'hard', 'expert'] or world.goal not in ['trinity', 'ganon', 'pedestal', 'dungeons', 'triforcehunt', 'crystals']
             or world.mode not in ['open', 'standard', 'inverted'] or world.timer not in ['none', 'display', 'timed', 'timed-ohko', 'ohko', 'timed-countdown'] or world.progressive not in ['on', 'off', 'random']):
         raise NotImplementedError('Not supported yet')
 
@@ -137,7 +143,7 @@ def generate_itempool(world, player):
     else:
         world.push_item(world.get_location('Ganon', player), ItemFactory('Triforce', player), False)
     
-    if world.goal in ['triforcehunt']:
+    if world.goal in ['trinity', 'triforcehunt']:
         if world.mode == 'inverted':
             region = world.get_region('Light World',player)
         else:
@@ -459,6 +465,12 @@ def get_pool_core(progressive, shuffle, difficulty, timer, goal, mode, swords, r
         extraitems -= len(diff.triforcehunt)
         treasure_hunt_count = diff.triforce_pieces_required
         treasure_hunt_icon = 'Triforce Piece'
+    if goal == 'trinity':
+        pool.extend(diff.trinityhunt)
+        extraitems -= len(diff.trinityhunt)
+        treasure_hunt_count = diff.trinity_pieces_required
+        treasure_hunt_icon = 'Triforce Piece'
+        placed_items.append(('Master Sword Pedestal', 'Triforce'))
 
     for extra in diff.extras:
         if extraitems > 0:
