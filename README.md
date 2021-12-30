@@ -1,4 +1,5 @@
 # ALttPEntranceRandomizer
+# Trinity Mod by thkg00fy
 
 This is a entrance randomizer for _The Legend of Zelda: A Link to the Past_ for the SNES.
 See https://alttpr.com/ for more details on the normal randomizer.
@@ -70,6 +71,10 @@ Items are placed without regard for progression or the seed being possible. Majo
 
 ## Game Goal
 
+### Trinity (Default)
+
+Three ways to finish the Seed: Master Sword Pedestal, Triforce Pieces or Ganon Fight. Choose your own way based on the items you find!
+
 ### Ganon
 
 Standard game completion requiring you to collect the 7 crystals, defeat Agahnim 2 and then beat Ganon.
@@ -87,11 +92,13 @@ Ganon cannot be damaged until all dungeons (including Hyrule Castle Tower and Ga
 Triforce Pieces are added to the item pool, and some number of them being found will trigger game completion. Ganon cannot be damaged.
 By default 30 Triforce Pieces are placed while 20 are needed to beat the game. Both values can be adjusted with the custom item pool feature.
 
-### Crystals
+### Crystals (Default is Random)
 
 Standard game completion requiring you to collect the 7 crystals and then beat Ganon.
 
 This is only noticeably different if the the Ganon shuffle option is enabled.
+
+For Trinity this is suggested to be set to RANDOM, to keep the outcome as balanced as possible.
 
 ## Game Difficulty
 
@@ -205,7 +212,7 @@ staleness, decreasing the likelihood of receiving a progress item.
 Determines how locations are shuffled. In all modes other than Insanity and the similar legacy versions, holes shuffle as a pair with the connecting cave and the front
 two sections of Skull Woods remain confined to the general Skull Woods area. Link's house is never shuffled as a design decision.
 
-### Vanilla
+### Vanilla (Default)
 
 Places entrances in the same locations they were in the original The Legend of Zelda: A Link to the Past.
 
