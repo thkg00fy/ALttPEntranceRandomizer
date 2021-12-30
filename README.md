@@ -1,5 +1,4 @@
-# ALttPEntranceRandomizer
-# Trinity Mod by thkg00fy
+# ALttPEntranceRandomizer - Trinity Mod by thkg00fy
 
 This is a entrance randomizer for _The Legend of Zelda: A Link to the Past_ for the SNES.
 See https://alttpr.com/ for more details on the normal randomizer.
