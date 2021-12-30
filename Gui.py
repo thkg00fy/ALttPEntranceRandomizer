@@ -185,15 +185,15 @@ def guiMain(args=None):
 
     goalFrame = Frame(drowDownFrame)
     goalVar = StringVar()
-    goalVar.set('ganon')
-    goalOptionMenu = OptionMenu(goalFrame, goalVar, 'ganon', 'pedestal', 'dungeons', 'triforcehunt', 'crystals')
+    goalVar.set('trinity')
+    goalOptionMenu = OptionMenu(goalFrame, goalVar, 'trinity', 'ganon', 'pedestal', 'dungeons', 'triforcehunt', 'crystals')
     goalOptionMenu.pack(side=RIGHT)
     goalLabel = Label(goalFrame, text='Game goal')
     goalLabel.pack(side=LEFT)
 
     crystalsGTFrame = Frame(drowDownFrame)
     crystalsGTVar = StringVar()
-    crystalsGTVar.set('7')
+    crystalsGTVar.set('random')
     crystalsGTOptionMenu = OptionMenu(crystalsGTFrame, crystalsGTVar, '0', '1', '2', '3', '4', '5', '6', '7', 'random')
     crystalsGTOptionMenu.pack(side=RIGHT)
     crystalsGTLabel = Label(crystalsGTFrame, text='Crystals to open Ganon\'s Tower')
@@ -201,7 +201,7 @@ def guiMain(args=None):
 
     crystalsGanonFrame = Frame(drowDownFrame)
     crystalsGanonVar = StringVar()
-    crystalsGanonVar.set('7')
+    crystalsGanonVar.set('random')
     crystalsGanonOptionMenu = OptionMenu(crystalsGanonFrame, crystalsGanonVar, '0', '1', '2', '3', '4', '5', '6', '7', 'random')
     crystalsGanonOptionMenu.pack(side=RIGHT)
     crystalsGanonLabel = Label(crystalsGanonFrame, text='Crystals to fight Ganon')
@@ -249,7 +249,7 @@ def guiMain(args=None):
 
     accessibilityFrame = Frame(drowDownFrame)
     accessibilityVar = StringVar()
-    accessibilityVar.set('items')
+    accessibilityVar.set('locations')
     accessibilityOptionMenu = OptionMenu(accessibilityFrame, accessibilityVar, 'items', 'locations', 'none')
     accessibilityOptionMenu.pack(side=RIGHT)
     accessibilityLabel = Label(accessibilityFrame, text='Item accessibility')
@@ -265,7 +265,7 @@ def guiMain(args=None):
 
     shuffleFrame = Frame(drowDownFrame)
     shuffleVar = StringVar()
-    shuffleVar.set('full')
+    shuffleVar.set('vanilla')
     shuffleOptionMenu = OptionMenu(shuffleFrame, shuffleVar, 'vanilla', 'simple', 'restricted', 'full', 'crossed', 'insanity', 'restricted_legacy', 'full_legacy', 'madness_legacy', 'insanity_legacy', 'dungeonsfull', 'dungeonssimple')
     shuffleOptionMenu.pack(side=RIGHT)
     shuffleLabel = Label(shuffleFrame, text='Entrance shuffle algorithm')
